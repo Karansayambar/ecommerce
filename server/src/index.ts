@@ -10,6 +10,7 @@ const PORT = 5000;
 app.use(
   cors({
     origin: "https://ecommerce-five-sable-91.vercel.app",
+    // origin: "http://localhost:5173",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })

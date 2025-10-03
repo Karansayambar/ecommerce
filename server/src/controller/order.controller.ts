@@ -1,10 +1,10 @@
 import type { Request, Response } from "express";
 
 export const takeOrder = async (req: Request, res: Response) => {
-  const { cart, userInfo } = req.body;
+  const { cart, userInfo, total } = req.body;
   console.log(cart, userInfo);
   try {
-    if (!userInfo || cart.length <= 0) {
+    if (!userInfo || !total || cart.length <= 0) {
       return res.status(400).json({
         message: "Cart and user information are required",
       });
@@ -21,6 +21,7 @@ export const takeOrder = async (req: Request, res: Response) => {
       order: {
         cart,
         userInfo,
+        total,
         placedAt: Date.now(),
       },
     });
