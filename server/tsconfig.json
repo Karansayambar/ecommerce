@@ -1,0 +1,41 @@
+// {
+//   "compilerOptions": {
+//     "module": "commonjs",
+//     "target": "ES2020",
+//     "types": [],
+//     "rootDir": "./src",
+//     "outDir": "./dist",
+//     "sourceMap": true,
+//     "declaration": false,
+//     "declarationMap": false,
+//     "noUncheckedIndexedAccess": true,
+//     "exactOptionalPropertyTypes": true,
+//     "strict": true,
+//     // "jsx": "react-jsx",
+//     // "verbatimModuleSyntax": true,
+//     // "isolatedModules": true,
+//     // "noUncheckedSideEffectImports": true,
+//     // "moduleDetection": "force",
+//     "skipLibCheck": true
+//   }
+// }
+
+{
+  "compilerOptions": {
+    "target": "ES2020", // Modern JS for Node 16+
+    "module": "commonjs", // Works best with Express ecosystem
+    "rootDir": "./src", // Where your TS code lives
+    "outDir": "./dist", // Compiled JS goes here
+
+    "strict": true, // Enable all strict checks
+    "esModuleInterop": true, // Lets you do: import express from "express"
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+
+    "sourceMap": true, // Debugging support
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
