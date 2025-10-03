@@ -41,7 +41,8 @@ const Checkout = () => {
       setIsLoading(true);
       setIsError(null);
       const response = await fetch(
-        "https://ecommerce-vqay.vercel.app/api/product/",
+        "https://ecommerce-vqay.vercel.app/api/order/take-order",
+        // "http://localhost:5000/api/order/take-order",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -49,6 +50,7 @@ const Checkout = () => {
         }
       );
       const data = await response.json();
+      console.log("Order Data from Backend", data);
       if (!response.ok) throw new Error(data.message || "Something went wrong");
       return data;
     } catch (error: any) {
@@ -77,6 +79,7 @@ const Checkout = () => {
         await resetCartData();
       }
     } catch (error: any) {
+      console.log(error.message);
       setIsError(error.message);
     }
   }

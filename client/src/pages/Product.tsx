@@ -27,6 +27,7 @@ const Product = () => {
       setIsLoading(true);
       const response = await fetch(
         "https://ecommerce-vqay.vercel.app/api/product/"
+        // "http://localhost:5000/api/product"
       );
       const json = await response.json();
       if (!response.ok)
