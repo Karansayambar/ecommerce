@@ -36,7 +36,7 @@ const Checkout = () => {
       setIsLoading(true);
       setIsError(null);
       const response = await fetch(
-        "http://localhost:5000/api/order/take-order",
+        "https://ecommerce-vqay.vercel.app/api/order/take-order",
         {
           method: "POST",
           headers: {

@@ -22,7 +22,9 @@ const Product = () => {
   async function fetchProductData() {
     try {
       setIsLoading(true);
-      const response = await fetch("http://localhost:5000/api/product/");
+      const response = await fetch(
+        "https://ecommerce-vqay.vercel.app/api/product/"
+      );
       const json = await response.json();
       if (!response.ok)
         throw new Error(json.response || "Failed to fetch products");
