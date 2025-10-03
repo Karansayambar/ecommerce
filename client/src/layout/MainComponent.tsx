@@ -7,6 +7,8 @@ const MainComponent = () => {
   return (
     <div className="w-screen flex items-center justify-center">
       <Header />
+
+      {/* Routing */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Product />} />

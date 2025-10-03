@@ -1,6 +1,6 @@
-export default function DotsLoader({ className = "" }) {
+export default function DotsLoader() {
   return (
-    <div className={`flex items-center gap-2 ${className}`}>
+    <div className={`flex items-center gap-2`}>
       <span
         className="w-3 h-3 rounded-full bg-white animate-bounce"
         style={{ animationDelay: "0s" }}

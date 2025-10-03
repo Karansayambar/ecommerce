@@ -36,6 +36,7 @@ export default function ProductProvider({ children }: { children: ReactNode }) {
       ? cart.reduce((acc, item) => acc + (item.quantity || 1), 0)
       : 0;
 
+  //Add a Item to the Cart
   function addToCart(product: Product) {
     setCart((prevCart) => {
       const existing = prevCart.find((item) => item.id === product.id);
@@ -51,6 +52,7 @@ export default function ProductProvider({ children }: { children: ReactNode }) {
     });
   }
 
+  // Remove Item from Cart
   function removeFromCart(productId: number) {
     setCart((prevCart) => {
       const existing = prevCart.find((item) => item.id === productId);
@@ -68,10 +70,12 @@ export default function ProductProvider({ children }: { children: ReactNode }) {
     });
   }
 
+  // Rest The Caet
   function resetCart() {
     setCart([]);
   }
 
+  // Total
   const total = cart.reduce((acc, item) => acc + item.quantity * item.price, 0);
 
   return (
